@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "HEICConverter (Package)": {
+      "commandName": "MsixPackage",
+      "remoteDebugEnabled": false,
+      "authenticationMode": "Windows",
+      "remoteDebugMachine": "192.168.101.71:4026"
+    },
+    "HEICConverter (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

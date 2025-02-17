@@ -1,0 +1,1 @@
+D:\Projects\HEICConverter\HEICConverter\HEICConverter\HEICConverter.csproj;x86

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HEICConverter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1dcf15c8c832ca43c81a789ba684e9ba91574d66")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae177bb66cd263388fcfe966eb60043e49424cb1")]
 [assembly: System.Reflection.AssemblyProductAttribute("HEICConverter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HEICConverter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

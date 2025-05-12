@@ -8,12 +8,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:storage="using:Windows.Storage"
     mc:Ignorable="d"
     Title="HEIC转换器"
-    Activated="Window_Activated"
     Closed="Window_Closed">
     <Window.SystemBackdrop>
         <MicaBackdrop />
     </Window.SystemBackdrop>
-    <Grid>
+    <Grid Name="RootGrid" Loaded="RootGrid_Loaded" >
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition/>
@@ -28,40 +27,76 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ListView Name="FilePathListView" ItemsSource="{x:Bind Files}" RightTapped="FilePathListView_RightTapped" AllowDrop="True" DragOver="FileDropBorder_DragOver" Drop="FileDropBorder_Drop" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="8">
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="storage:StorageFile">
-                        <TextBlock Text="{Binding Name}" MaxLines="3" TextWrapping="WrapWholeWords"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-                <ListView.ContextFlyout>
-                    <MenuFlyout x:Name="FilePathListView_MenuFlyout" Opened="FilePathListView_MenuFlyout_Opened">
-                        <MenuFlyoutItem Text="打开文件所在位置" Name="ConvertQueueMenu_OpenFilePlace" Click="ConvertQueueMenu_OpenFilePlace_Click">
-                            <MenuFlyoutItem.Icon>
-                                <FontIcon FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Glyph="&#xE8DA;" />
-                            </MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutSeparator/>
-                        <MenuFlyoutItem Text="从转换队列中移除" Foreground="Red" Name="ConvertQueueMenu_Delete" Click="ConvertQueueMenu_Delete_Click">
-                            <MenuFlyoutItem.Icon>
-                                <FontIcon FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="Red" Glyph="&#xE74D;" />
-                            </MenuFlyoutItem.Icon>
-                        </MenuFlyoutItem>
-                    </MenuFlyout>
-                </ListView.ContextFlyout>
-            </ListView>
-            <StackPanel Grid.Column="1" VerticalAlignment="Bottom" Margin="8,0,0,0">
-                <TextBlock Name="FileCount" Text=""/>
-                <RadioButtons Margin="0,0,0,8" Name="ConvertModeRadioButtons" SelectionChanged="ConvertModeRadioButtons_SelectionChanged">
-                    <RadioButton Content="全部转换为JPG"/>
-                    <RadioButton Content="全部转换为PNG"/>
-                </RadioButtons>
-                <CheckBox Content="转换后删除原文件" Margin="0,0,0,8" Name="DeleteHEICFileAfterConvert_CheckBox" Checked="DeleteHEICFileAfterConvert_CheckBox_Checked" Unchecked="DeleteHEICFileAfterConvert_CheckBox_Unchecked"/>
-                <Button HorizontalAlignment="Stretch" Name="ConvertButton" Height="40" Style="{StaticResource AccentButtonStyle}" Content="开始转换" Click="ConvertButton_Click"/>
-            </StackPanel>
+            <Grid Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                
+                <ListView Name="FilePathListView" ItemsSource="{x:Bind Files}" RightTapped="FilePathListView_RightTapped" AllowDrop="True" DragOver="FileDropBorder_DragOver" Drop="FileDropBorder_Drop"  CornerRadius="8">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="storage:StorageFile">
+                            <TextBlock Text="{Binding Name}" MaxLines="3" TextWrapping="WrapWholeWords"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ContextFlyout>
+                        <MenuFlyout x:Name="FilePathListView_MenuFlyout" Opened="FilePathListView_MenuFlyout_Opened">
+                            <MenuFlyoutItem Text="打开文件所在位置" Name="ConvertQueueMenu_OpenFilePlace" Click="ConvertQueueMenu_OpenFilePlace_Click">
+                                <MenuFlyoutItem.Icon>
+                                    <FontIcon FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Glyph="&#xE8DA;" />
+                                </MenuFlyoutItem.Icon>
+                            </MenuFlyoutItem>
+                            <MenuFlyoutItem Text="从转换队列中移除" Foreground="Red" Name="ConvertQueueMenu_Delete" Click="ConvertQueueMenu_Delete_Click">
+                                <MenuFlyoutItem.Icon>
+                                    <FontIcon FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="Red" Glyph="&#xE711;" />
+                                </MenuFlyoutItem.Icon>
+                            </MenuFlyoutItem>
+                            <MenuFlyoutSeparator Visibility="{Binding ElementName=ConvertQueueMenu_OpenFile,Path=Visibility}"/>
+                            <MenuFlyoutItem Text="打开文件" Name="ConvertQueueMenu_OpenFile" Click="Menu_OpenFileButton_Click">
+                                <MenuFlyoutItem.Icon>
+                                    <FontIcon FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Glyph="&#xE8E5;" />
+                                </MenuFlyoutItem.Icon>
+                            </MenuFlyoutItem>
+                        </MenuFlyout>
+                    </ListView.ContextFlyout>
+                </ListView>
+                <StackPanel Name="EmptyTipStackPanel" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <FontIcon IsHitTestVisible="False" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="32" Glyph="&#xE8FF;" Margin="0,0,0,8"/>
+                    <TextBlock IsHitTestVisible="False" TextAlignment="Center" TextWrapping="WrapWholeWords" Text="转换队列为空&#13;请拖拽HEIC文件至此&#13;或"/>
+                    <Button Margin="0,4,0,0" Padding="8" HorizontalAlignment="Center" Name="OpenFileButton" Click="Menu_OpenFileButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE8E5;" />
+                            <TextBlock Margin="4,0,0,0" Text="打开文件"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1" Margin="8,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <ScrollViewer>
+                    <StackPanel VerticalAlignment="Bottom">
+                        <TextBlock Name="FileCount" Text=""/>
+                        <RadioButtons Margin="0,0,0,8" Name="ConvertModeRadioButtons" SelectionChanged="ConvertModeRadioButtons_SelectionChanged">
+                            <RadioButton Content="全部转换为JPG"/>
+                            <RadioButton Content="全部转换为PNG"/>
+                        </RadioButtons>
+                        <CheckBox Content="转换后删除原文件" Margin="0,0,0,8" Name="DeleteHEICFileAfterConvert_CheckBox" Checked="DeleteHEICFileAfterConvert_CheckBox_Checked" Unchecked="DeleteHEICFileAfterConvert_CheckBox_Unchecked"/>
+
+                    </StackPanel>
+                </ScrollViewer>
+                <Button Grid.Row="1" HorizontalAlignment="Stretch" Name="ConvertButton" Height="40" Style="{StaticResource AccentButtonStyle}" Content="开始转换" Click="ConvertButton_Click"/>
+                <Button Grid.Row="1" HorizontalAlignment="Stretch" Name="CancelConvertButton" Height="40" Content="取消转换" Click="CancelConvertButton_Click" Visibility="Collapsed"/>
+            </Grid>
+            
         </Grid>
         <StackPanel Grid.Row="2">
-            <TextBlock Text="等待转换……" Name="ProgressText" HorizontalAlignment="Center" Margin="0,0,0,4"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <ProgressRing Name="ConvertingProgressRing" Height="20" Width="20" Margin="0,-4,8,0" IsActive="False"/>
+                <TextBlock Text="等待转换……" Name="ProgressText" HorizontalAlignment="Center" Margin="0,0,0,4"/>
+            </StackPanel>
             <ProgressBar Name="ConvertProgressBar" Value="0" Background="Transparent"/>
         </StackPanel>
     </Grid>

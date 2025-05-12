@@ -24,6 +24,7 @@ using Windows.Graphics;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.System;
+using WinUIEx;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -35,16 +36,16 @@ namespace HEICConverter
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+        public static bool MainWindowRunning = false;
+
         Microsoft.UI.Windowing.AppWindow m_appWindow;
         public MainWindow()
         {
             this.InitializeComponent();
-            m_appWindow = GetAppWindowForCurrentWindow();
-            //m_appWindow.SetPresenter(AppWindowPresenterKind.FullScreen);  // This line
-            // 调整窗口位置和大小，以屏幕像素为单位
-            m_appWindow.Resize(new SizeInt32(1022, 642));
             this.ExtendsContentIntoTitleBar = true;
             SetVersionMessage();
+            
+            this.Activated += Window_Activated;
         }
         private Microsoft.UI.Windowing.AppWindow GetAppWindowForCurrentWindow()
         {
@@ -62,8 +63,25 @@ namespace HEICConverter
 
         private void Window_Closed(object sender, WindowEventArgs args)
         {
-            if(!App.IsConverterWindowActivated)
+            MainWindowRunning = false;
+            Activated -= Window_Activated;
+            if (!App.IsConverterWindowActivated)
                 Environment.Exit(0);
+
+        }
+
+        void SetWindowSettings()
+        {
+            if (MainWindowRunning == true)
+                return;
+            m_appWindow = GetAppWindowForCurrentWindow();
+            if (localSettings.Values["MainWindow_Height"] == null || localSettings.Values["MainWindow_Width"] == null)
+                m_appWindow.Resize(new SizeInt32(1022, 642));
+            else
+            {
+                m_appWindow.Resize(new SizeInt32(Convert.ToInt32(localSettings.Values["MainWindow_Width"]), Convert.ToInt32(localSettings.Values["MainWindow_Height"])));
+            } 
+            SizeChanged += Window_SizeChanged;
         }
 
         private async void CheckForUpdate_Button_Click(object sender, RoutedEventArgs e)
@@ -93,32 +111,43 @@ namespace HEICConverter
         async Task CheckForUpdateAsync()
         {
             var http = new HttpClient();
-            var response = await http.GetAsync("https://pigeon-ming.github.io/Versions/HEICConverter.txt");
-            var result = await response.Content.ReadAsStringAsync();
-            var response_Log = await http.GetAsync("https://pigeon-ming.github.io/Versions/HEICConverter.txt");
-            var result_Log = await response_Log.Content.ReadAsStringAsync();
-            string appVersion = Package.Current.Id.Version.Build.ToString();
-            if (String.IsNullOrEmpty(result))
+            try
+            {
+                var response = await http.GetAsync("https://pigeon-ming.github.io/Versions/HEICConverter.txt");
+                var result = await response.Content.ReadAsStringAsync();
+                var response_Log = await http.GetAsync("https://pigeon-ming.github.io/Versions/HEICConverter.txt");
+                var result_Log = await response_Log.Content.ReadAsStringAsync();
+                string appVersion = Package.Current.Id.Version.Build.ToString();
+                if (String.IsNullOrEmpty(result))
+                {
+                    CheckUpdate_InfoBar.Title = "检查失败";
+                    CheckUpdate_InfoBar.Severity = Microsoft.UI.Xaml.Controls.InfoBarSeverity.Error;
+                    CheckUpdate_InfoBar.ActionButton = null;
+                    CheckUpdate_InfoBar.IsOpen = true;
+                }
+                //Debug.WriteLine(result.Substring(result.LastIndexOf(".") + 1, result.Length - result.LastIndexOf(".") - 1));
+                if (Convert.ToInt32(appVersion) < Convert.ToInt32(result.Substring(result.LastIndexOf(".") + 1, result.Length - result.LastIndexOf(".") - 1)))
+                {
+
+                    CheckUpdate_InfoBar.Title = "发现新版本";
+                    CheckUpdate_InfoBar.Content = result_Log + '\n';
+                    CheckUpdate_InfoBar.Severity = Microsoft.UI.Xaml.Controls.InfoBarSeverity.Warning;
+                    CheckUpdate_InfoBar.UpdateLayout();
+                    CheckUpdate_InfoBar.IsOpen = true;
+                }
+                else
+                {
+                    CheckUpdate_InfoBar.Title = "您使用的是最新版本";
+                    CheckUpdate_InfoBar.Severity = Microsoft.UI.Xaml.Controls.InfoBarSeverity.Success;
+                    CheckUpdate_InfoBar.ActionButton = null;
+                    CheckUpdate_InfoBar.IsOpen = true;
+                }
+            }
+            catch(Exception e)
             {
                 CheckUpdate_InfoBar.Title = "检查失败";
+                CheckUpdate_InfoBar.Message = e.Message;
                 CheckUpdate_InfoBar.Severity = Microsoft.UI.Xaml.Controls.InfoBarSeverity.Error;
-                CheckUpdate_InfoBar.ActionButton = null;
-                CheckUpdate_InfoBar.IsOpen = true;
-            }
-            //Debug.WriteLine(result.Substring(result.LastIndexOf(".") + 1, result.Length - result.LastIndexOf(".") - 1));
-            if (Convert.ToInt32(appVersion) < Convert.ToInt32(result.Substring(result.LastIndexOf(".") + 1, result.Length - result.LastIndexOf(".") - 1)))
-            {
-
-                CheckUpdate_InfoBar.Title = "发现新版本";
-                CheckUpdate_InfoBar.Content = result_Log + '\n';
-                CheckUpdate_InfoBar.Severity = Microsoft.UI.Xaml.Controls.InfoBarSeverity.Warning;
-                CheckUpdate_InfoBar.UpdateLayout();
-                CheckUpdate_InfoBar.IsOpen = true;
-            }
-            else
-            {
-                CheckUpdate_InfoBar.Title = "您使用的是最新版本";
-                CheckUpdate_InfoBar.Severity = Microsoft.UI.Xaml.Controls.InfoBarSeverity.Success;
                 CheckUpdate_InfoBar.ActionButton = null;
                 CheckUpdate_InfoBar.IsOpen = true;
             }
@@ -185,6 +214,20 @@ namespace HEICConverter
                 }
                 App.TryToActivateConverterWindow();
             }
+        }
+
+        ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+
+        private void Window_SizeChanged(object sender, WindowSizeChangedEventArgs args)
+        {
+            localSettings.Values["MainWindow_Height"] = m_appWindow.Size.Height;
+            localSettings.Values["MainWindow_Width"] = m_appWindow.Size.Width;
+        }
+
+        private void Window_Activated(object sender, WindowActivatedEventArgs args)
+        {
+            SetWindowSettings();
+            MainWindowRunning = true;
         }
     }
 }

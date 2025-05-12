@@ -18,6 +18,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using WinUIEx;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -130,19 +131,29 @@ namespace HEICConverter
 
         private void MainInstance_Activated(object sender, Microsoft.Windows.AppLifecycle.AppActivationArguments e)
         {
-            
-            List<IStorageItem> files =  (((Windows.ApplicationModel.Activation.FileActivatedEventArgs)e.Data).Files).ToList();
-            Debug.WriteLine("激活主实例");
-            if (files!=null && files.Count!=0)
+            if (e.Data is Windows.ApplicationModel.Activation.FileActivatedEventArgs)
             {
-                //converter_window.DebugText = "Here";
-                Debug.WriteLine("File个数:"+files.Count);
-
-                foreach (var item in files)
+                List<IStorageItem> files = (((Windows.ApplicationModel.Activation.FileActivatedEventArgs)e.Data).Files).ToList();
+                Debug.WriteLine("激活主实例");
+                if (files != null && files.Count != 0)
                 {
-                    converter_window.AddFile((StorageFile)item);
+                    //converter_window.DebugText = "Here";
+                    Debug.WriteLine("File个数:" + files.Count);
+
+                    foreach (var item in files)
+                    {
+                        converter_window.AddFile((StorageFile)item);
+                    }
                 }
             }
+            //}else if (e.Data is Windows.ApplicationModel.Activation.LaunchActivatedEventArgs)
+            //{
+            //    if (MainWindow.MainWindowRunning == false)
+            //    {
+            //        m_window = new MainWindow();
+            //        m_window.Activate();
+            //    }
+            //}
         }
 
         private Window m_window;

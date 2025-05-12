@@ -3,47 +3,47 @@
   "WorkspaceRootPath": "D:\\Projects\\HEICConverter\\HEICConverter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\heicconverter.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\heicconverter.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\views\\converterwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\views\\converterwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\converter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\converter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\views\\converterwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\views\\converterwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\models\\contentdialoghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\models\\contentdialoghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\models\\registryhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\models\\registryhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\converter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\converter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\heicconverter.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\heicconverter.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\zouqi\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.250205002\\buildTransitive\\Microsoft.Build.Msix.Packaging.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\views\\converterwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\views\\converterwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\views\\converterwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\views\\converterwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\models\\registryhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\models\\registryhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Publish.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|d:\\projects\\heicconverter\\heicconverter\\heicconverter\\models\\contentdialoghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4951D998-F2E2-40AC-A3C1-1CE9746F4FAE}|HEICConverter\\HEICConverter.csproj|solutionrelative:heicconverter\\models\\contentdialoghelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -53,12 +53,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 10,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HEICConverter",
+              "DocumentIndex": 4,
+              "Title": "Microsoft.Build.Msix.Packaging.targets",
+              "DocumentMoniker": "C:\\Users\\zouqi\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.250205002\\buildTransitive\\Microsoft.Build.Msix.Packaging.targets",
+              "ToolTip": "C:\\Users\\zouqi\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.250205002\\buildTransitive\\Microsoft.Build.Msix.Packaging.targets",
+              "ViewState": "AgIAAJoDAAAAAAAAAAArwKUDAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-02-23T07:10:14.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HEICConverter.csproj",
               "DocumentMoniker": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\HEICConverter.csproj",
               "RelativeDocumentMoniker": "HEICConverter\\HEICConverter.csproj",
               "ToolTip": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\HEICConverter.csproj",
@@ -70,60 +89,49 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Microsoft.NET.Publish.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Publish.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.Publish.targets",
-              "ViewState": "AgIAAIABAAAAAAAAAAAiwJUBAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-02-15T15:27:18.922Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\App.xaml.cs",
               "RelativeDocumentMoniker": "HEICConverter\\App.xaml.cs",
               "ToolTip": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\App.xaml.cs",
               "RelativeToolTip": "HEICConverter\\App.xaml.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAqwHkAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAIAwwHsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-14T03:56:11.309Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "ConverterWindow.xaml.cs",
               "DocumentMoniker": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\Views\\ConverterWindow.xaml.cs",
               "RelativeDocumentMoniker": "HEICConverter\\Views\\ConverterWindow.xaml.cs",
               "ToolTip": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\Views\\ConverterWindow.xaml.cs",
               "RelativeToolTip": "HEICConverter\\Views\\ConverterWindow.xaml.cs",
-              "ViewState": "AgIAANQAAAAAAAAAAAAkwNsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAswI4AAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T03:02:28.948Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T03:02:28.948Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ConverterWindow.xaml",
               "DocumentMoniker": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\Views\\ConverterWindow.xaml",
               "RelativeDocumentMoniker": "HEICConverter\\Views\\ConverterWindow.xaml",
               "ToolTip": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\Views\\ConverterWindow.xaml",
               "RelativeToolTip": "HEICConverter\\Views\\ConverterWindow.xaml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACUAAABkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-02-13T02:49:32.152Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "ContentDialogHelper.cs",
               "DocumentMoniker": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\Models\\ContentDialogHelper.cs",
               "RelativeDocumentMoniker": "HEICConverter\\Models\\ContentDialogHelper.cs",
               "ToolTip": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\Models\\ContentDialogHelper.cs",
               "RelativeToolTip": "HEICConverter\\Models\\ContentDialogHelper.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAkwBwAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-12T12:37:06.43Z"
             },
@@ -141,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "RegistryHelper.cs",
               "DocumentMoniker": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\Models\\RegistryHelper.cs",
               "RelativeDocumentMoniker": "HEICConverter\\Models\\RegistryHelper.cs",
@@ -153,15 +161,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "HEICConverter\\MainWindow.xaml.cs",
               "ToolTip": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\MainWindow.xaml.cs",
               "RelativeToolTip": "HEICConverter\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAQwEAAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAALAAAAAAAAAAAAD4v74AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T12:30:42.628Z"
+              "WhenOpened": "2025-02-12T12:30:42.628Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -173,19 +182,21 @@
               "RelativeToolTip": "HEICConverter\\Converter.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAjwB8AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T12:23:30.093Z"
+              "WhenOpened": "2025-02-12T12:23:30.093Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\MainWindow.xaml",
               "RelativeDocumentMoniker": "HEICConverter\\MainWindow.xaml",
               "ToolTip": "D:\\Projects\\HEICConverter\\HEICConverter\\HEICConverter\\MainWindow.xaml",
               "RelativeToolTip": "HEICConverter\\MainWindow.xaml",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAGQAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADEAAAB9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-12T12:03:44.888Z"
+              "WhenOpened": "2025-02-12T12:03:44.888Z",
+              "EditorCaption": ""
             }
           ]
         }

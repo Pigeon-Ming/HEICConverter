@@ -10,12 +10,12 @@
     <SplashScreenSource>C:\Users\zouqi\OneDrive\PlanetMusicPlayer工程\HEICConverter.png</SplashScreenSource>
     <PackageLogoSource>C:\Users\zouqi\OneDrive\PlanetMusicPlayer工程\HEICConverter.png</PackageLogoSource>
     <BadgeLogoSource>C:\Users\zouqi\OneDrive\PlanetMusicPlayer工程\HEICConverter.png</BadgeLogoSource>
-    <UapAppxPackageBuildMode>SideloadOnly</UapAppxPackageBuildMode>
+    <UapAppxPackageBuildMode>StoreOnly</UapAppxPackageBuildMode>
     <AppxShowAllApps>False</AppxShowAllApps>
-    <AppxBuildConfigurationSelection>x64</AppxBuildConfigurationSelection>
+    <AppxBuildConfigurationSelection>x86</AppxBuildConfigurationSelection>
     <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
     <_LastSelectedProfileId>D:\Projects\HEICConverter\HEICConverter\HEICConverter\Properties\PublishProfiles\win-arm64.pubxml</_LastSelectedProfileId>
-    <ActiveDebugProfile>HEICConverter (Unpackaged)</ActiveDebugProfile>
+    <ActiveDebugProfile>HEICConverter (Package)</ActiveDebugProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>

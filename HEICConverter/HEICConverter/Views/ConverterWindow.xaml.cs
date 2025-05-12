@@ -11,6 +11,10 @@ using WinUIEx;
 using Windows.UI.Shell;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.System;
+using System.Diagnostics;
+using Windows.Storage.Pickers;
+using System.Runtime.InteropServices;
+using Windows.UI.Accessibility;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -43,17 +47,19 @@ namespace HEICConverter.Views
             this.InitializeComponent();
             this.ExtendsContentIntoTitleBar = true;
 
-            SetWindowSettings();
+            
 
 
 
             UpdateViewTimer.Interval = TimeSpan.FromSeconds(1);
             UpdateViewTimer.Tick += UpdateViewTimer_Tick;
 
-            Activated += ConverterWindow_Activated;
+            Activated += Window_Activated;
             LoadTimer.Interval = TimeSpan.FromSeconds(1);
             LoadTimer.Tick += LoadTimer_Tick;
             LoadTimer.Start();
+
+            
         }
 
         private void LoadTimer_Tick(object sender, object e)
@@ -64,12 +70,7 @@ namespace HEICConverter.Views
             }
         }
 
-        bool isActivated { get; set; } = false;
-
-        private void ConverterWindow_Activated(object sender, WindowActivatedEventArgs args)
-        {
-            isActivated = true;
-        }
+        public bool isActivated { get; set; } = false;
 
         int itemsCount { get; set; } = -1;
 
@@ -80,14 +81,26 @@ namespace HEICConverter.Views
 
         void UpdateView()
         {
-            
+            if (Files.Count == 0)
+            {
+                EmptyTipStackPanel.Visibility = Visibility.Visible;
+                ConvertButton.IsEnabled = false;
+            }
+            else
+            {
+                EmptyTipStackPanel.Visibility = Visibility.Collapsed;
+                ConvertButton.IsEnabled = true;
+            }
             if (itemsCount != Files.Count)
             {
-                if(Files.Count == 0)
-                    ProgressText.Text = "等待转换……";
+
+
+                ProgressText.Text = "等待转换……";
+
+
                 Files = Files.GroupBy(file => file.Path, StringComparer.OrdinalIgnoreCase)
-            .Select(group => group.First())
-            .ToList();
+                .Select(group => group.First())
+                .ToList();
                 itemsCount = Files.Count;
 
                 RefreshListView();
@@ -110,11 +123,24 @@ namespace HEICConverter.Views
         void SetWindowSettings()
         {
             m_appWindow = GetAppWindowForCurrentWindow();
-            m_appWindow.Resize(new SizeInt32(707, 390));
+            if (localSettings.Values["ConverterWindow_Height"] == null || localSettings.Values["ConverterWindow_Width"] == null)
+                m_appWindow.Resize(new SizeInt32(707, 390));
+            else
+            {
+                m_appWindow.Resize(new SizeInt32(Convert.ToInt32(localSettings.Values["ConverterWindow_Width"]), Convert.ToInt32(localSettings.Values["ConverterWindow_Height"])));
+            }
+            SizeChanged += ConverterWindow_SizeChanged;
+
             WindowManager.Get(this).IsMinimizable = false;
             WindowManager.Get(this).IsMaximizable = false;
-            WindowManager.Get(this).IsResizable = false;
+            WindowManager.Get(this).IsResizable = true;
             WindowManager.Get(this).IsAlwaysOnTop = true;
+        }
+
+        private void ConverterWindow_SizeChanged(object sender, WindowSizeChangedEventArgs args)
+        {
+            localSettings.Values["ConverterWindow_Height"] = m_appWindow.Size.Height;
+            localSettings.Values["ConverterWindow_Width"] = m_appWindow.Size.Width;
         }
 
         private Microsoft.UI.Windowing.AppWindow GetAppWindowForCurrentWindow()
@@ -127,21 +153,33 @@ namespace HEICConverter.Views
 
         private void ConvertButton_Click(object sender, RoutedEventArgs e)
         {
+            CancelFlag = false;
             StartConvertAsync();
+        }
+
+        bool CancelFlag = false;
+
+        private void CancelConvertButton_Click(object sender, RoutedEventArgs e)
+        {
+            CancelConvertButton.Content = "正在停止转换……";
+            CancelFlag = true;
         }
 
         public async void StartConvertAsync()
         {
-            
+            ConvertButton.Visibility = Visibility.Collapsed;
+            CancelConvertButton.Visibility = Visibility.Visible;
             IsConverting = true;
             ConvertProgressBar.Visibility = Visibility.Visible;
             ConvertModeRadioButtons.IsEnabled = false;
             DeleteHEICFileAfterConvert_CheckBox.IsEnabled = false;
             ConvertButton.IsEnabled = false;
+            FilePathListView.IsEnabled = false;
             bool DeleteHEICFileAfterConvert = (bool)DeleteHEICFileAfterConvert_CheckBox.IsChecked;
             int fileIndex = 0;
             ConvertProgressBar.Maximum = Files.Count;
             UpdateViewTimer.Stop();
+            ConvertingProgressRing.IsActive = true;
             switch (ConvertModeRadioButtons.SelectedIndex)
             {
                 case 0://JPG
@@ -150,6 +188,8 @@ namespace HEICConverter.Views
                     {
                         ProgressText.Text = $"({++fileIndex}/{Files.Count})正在转换文件{item.Name}";
                         ConvertProgressBar.Value = fileIndex;
+                        if (CancelFlag)
+                            break;
                         await Task.Run(async () =>
                         {
                             await Converter.HEIC2jpg(item.Path);
@@ -161,6 +201,8 @@ namespace HEICConverter.Views
                     {
                         ConvertProgressBar.Value = fileIndex;
                         ProgressText.Text = $"({++fileIndex}/{Files.Count})正在转换文件{item.Name}";
+                        if (CancelFlag)
+                            break;
                         await Task.Run(async () =>
                         {
                             await Converter.HEIC2png(item.Path);
@@ -176,6 +218,8 @@ namespace HEICConverter.Views
                 {
                     ConvertProgressBar.Value = fileIndex;
                     ProgressText.Text = $"({++fileIndex}/{Files.Count})正在删除文件{item.Name}";
+                    if (CancelFlag)
+                        break;
                     await Task.Run(async () =>
                     {
                         try
@@ -188,14 +232,19 @@ namespace HEICConverter.Views
                         }
                     });
                 }
-                if(deleteFailedFiles!=0)
+                if (CancelFlag)
+                    ProgressText.Text = "转换已取消。";
+                else if (deleteFailedFiles!=0)
                     ProgressText.Text = $"转换完成，{deleteFailedFiles}个文件删除失败。";
                 else
                     ProgressText.Text = "转换完成";
             }
             else
             {
-                ProgressText.Text = "转换完成";
+                if (CancelFlag)
+                    ProgressText.Text = "转换已取消。";
+                else
+                    ProgressText.Text = "转换完成";
             }
             Files.Clear();
             itemsCount = 0;
@@ -204,7 +253,14 @@ namespace HEICConverter.Views
             ConvertModeRadioButtons.IsEnabled = true;
             DeleteHEICFileAfterConvert_CheckBox.IsEnabled = true;
             ConvertButton.IsEnabled = true;
+            FilePathListView.IsEnabled = true;
+            ConvertingProgressRing.IsActive = false;
             IsConverting = false;
+            CancelFlag = false;
+            ConvertButton.Visibility = Visibility.Visible;
+            CancelConvertButton.Visibility = Visibility.Collapsed;
+            FileCount.Text = "已选择0个文件";
+            UpdateView();
             UpdateViewTimer.Start();
         }
 
@@ -214,12 +270,16 @@ namespace HEICConverter.Views
             UpdateViewTimer.Start();
             InitSettings();
             UpdateView();
+            isActivated = true;
         }
 
         private void Window_Closed(object sender, WindowEventArgs args)
         {
             UpdateViewTimer.Stop();
-            Environment.Exit(0);
+            Activated -= Window_Activated;
+            isActivated = false;
+            if (MainWindow.MainWindowRunning == false)
+                Environment.Exit(0);
         }
 
         ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
@@ -310,9 +370,41 @@ namespace HEICConverter.Views
         {
             if (MenuStorageFile == null)
             {
-                FilePathListView_MenuFlyout.Hide();
+                ConvertQueueMenu_OpenFilePlace.Visibility = Visibility.Collapsed;
+                ConvertQueueMenu_Delete.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                ConvertQueueMenu_OpenFilePlace.Visibility = Visibility.Visible;
+                ConvertQueueMenu_Delete.Visibility = Visibility.Visible;
             }
         }
+
+        public async Task<List<StorageFile>> OpenFilesAsync()
+        {
+            var openPicker = new FileOpenPicker();
+            openPicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            openPicker.FileTypeFilter.Add(".heic");
+
+            var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+            WinRT.Interop.InitializeWithWindow.Initialize(openPicker, hwnd);
+
+            return (await openPicker.PickMultipleFilesAsync()).ToList();
+        }
+
+        private async void Menu_OpenFileButton_Click(object sender, RoutedEventArgs e)
+        {
+            List<StorageFile>file = await OpenFilesAsync();
+            if (file != null)
+                Files = Files.Concat(file).ToList();
+        }
+
+        private void RootGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            SetWindowSettings();
+        }
+
+
 
         //private void RefreshButton_Click(object sender, RoutedEventArgs e)
         //{

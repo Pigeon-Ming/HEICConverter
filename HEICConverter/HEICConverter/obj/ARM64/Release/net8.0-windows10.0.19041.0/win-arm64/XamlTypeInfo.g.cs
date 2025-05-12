@@ -226,7 +226,7 @@ namespace HEICConverter.HEICConverter_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[35];
+            _typeNameTable = new string[38];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -257,13 +257,16 @@ namespace HEICConverter.HEICConverter_XamlTypeInfo
             _typeNameTable[27] = "Microsoft.UI.Xaml.Controls.ProgressBar";
             _typeNameTable[28] = "Microsoft.UI.Xaml.Controls.Primitives.RangeBase";
             _typeNameTable[29] = "Microsoft.UI.Xaml.Controls.ProgressBarTemplateSettings";
-            _typeNameTable[30] = "Microsoft.UI.Xaml.Controls.RadioButtons";
-            _typeNameTable[31] = "System.Collections.Generic.IList`1<Object>";
-            _typeNameTable[32] = "HEICConverter.Views.ConverterWindow";
-            _typeNameTable[33] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[34] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[30] = "Microsoft.UI.Xaml.Controls.ProgressRing";
+            _typeNameTable[31] = "Double";
+            _typeNameTable[32] = "Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings";
+            _typeNameTable[33] = "Microsoft.UI.Xaml.Controls.RadioButtons";
+            _typeNameTable[34] = "System.Collections.Generic.IList`1<Object>";
+            _typeNameTable[35] = "HEICConverter.Views.ConverterWindow";
+            _typeNameTable[36] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[37] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[35];
+            _typeTable = new global::System.Type[38];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -294,11 +297,14 @@ namespace HEICConverter.HEICConverter_XamlTypeInfo
             _typeTable[27] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressBar);
             _typeTable[28] = typeof(global::Microsoft.UI.Xaml.Controls.Primitives.RangeBase);
             _typeTable[29] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressBarTemplateSettings);
-            _typeTable[30] = typeof(global::Microsoft.UI.Xaml.Controls.RadioButtons);
-            _typeTable[31] = typeof(global::System.Collections.Generic.IList<global::System.Object>);
-            _typeTable[32] = typeof(global::HEICConverter.Views.ConverterWindow);
-            _typeTable[33] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[34] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[30] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing);
+            _typeTable[31] = typeof(global::System.Double);
+            _typeTable[32] = typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings);
+            _typeTable[33] = typeof(global::Microsoft.UI.Xaml.Controls.RadioButtons);
+            _typeTable[34] = typeof(global::System.Collections.Generic.IList<global::System.Object>);
+            _typeTable[35] = typeof(global::HEICConverter.Views.ConverterWindow);
+            _typeTable[36] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[37] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -341,9 +347,10 @@ namespace HEICConverter.HEICConverter_XamlTypeInfo
         private object Activate_23_Contact() { return new global::Windows.ApplicationModel.Contacts.Contact(); }
         private object Activate_25_MainWindow() { return new global::HEICConverter.MainWindow(); }
         private object Activate_27_ProgressBar() { return new global::Microsoft.UI.Xaml.Controls.ProgressBar(); }
-        private object Activate_30_RadioButtons() { return new global::Microsoft.UI.Xaml.Controls.RadioButtons(); }
-        private object Activate_32_ConverterWindow() { return new global::HEICConverter.Views.ConverterWindow(); }
-        private object Activate_33_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_30_ProgressRing() { return new global::Microsoft.UI.Xaml.Controls.ProgressRing(); }
+        private object Activate_33_RadioButtons() { return new global::Microsoft.UI.Xaml.Controls.RadioButtons(); }
+        private object Activate_35_ConverterWindow() { return new global::HEICConverter.Views.ConverterWindow(); }
+        private object Activate_36_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_MicaBackdrop() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop).TypeHandle);
         private void StaticInitializer_6_MicaKind() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind).TypeHandle);
@@ -359,11 +366,13 @@ namespace HEICConverter.HEICConverter_XamlTypeInfo
         private void StaticInitializer_25_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::HEICConverter.MainWindow).TypeHandle);
         private void StaticInitializer_27_ProgressBar() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressBar).TypeHandle);
         private void StaticInitializer_29_ProgressBarTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressBarTemplateSettings).TypeHandle);
-        private void StaticInitializer_30_RadioButtons() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.RadioButtons).TypeHandle);
-        private void StaticInitializer_31_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::System.Object>).TypeHandle);
-        private void StaticInitializer_32_ConverterWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::HEICConverter.Views.ConverterWindow).TypeHandle);
-        private void StaticInitializer_33_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_34_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_30_ProgressRing() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressRing).TypeHandle);
+        private void StaticInitializer_32_ProgressRingTemplateSettings() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings).TypeHandle);
+        private void StaticInitializer_33_RadioButtons() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.RadioButtons).TypeHandle);
+        private void StaticInitializer_34_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::System.Object>).TypeHandle);
+        private void StaticInitializer_35_ConverterWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::HEICConverter.Views.ConverterWindow).TypeHandle);
+        private void StaticInitializer_36_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_37_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -371,13 +380,13 @@ namespace HEICConverter.HEICConverter_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_31_IList(object instance, object item)
+        private void VectorAdd_34_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.Object>)instance;
             var newItem = (global::System.Object)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_34_IList(object instance, object item)
+        private void VectorAdd_37_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -595,10 +604,34 @@ namespace HEICConverter.HEICConverter_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 30:   //  Microsoft.UI.Xaml.Controls.RadioButtons
+            case 30:   //  Microsoft.UI.Xaml.Controls.ProgressRing
                 userType = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_30_RadioButtons;
-                userType.StaticInitializer = StaticInitializer_30_RadioButtons;
+                userType.Activator = Activate_30_ProgressRing;
+                userType.StaticInitializer = StaticInitializer_30_ProgressRing;
+                userType.AddMemberName("IsActive");
+                userType.AddMemberName("IsIndeterminate");
+                userType.AddMemberName("Maximum");
+                userType.AddMemberName("Minimum");
+                userType.AddMemberName("TemplateSettings");
+                userType.AddMemberName("Value");
+                xamlType = userType;
+                break;
+
+            case 31:   //  Double
+                xamlType = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 32:   //  Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings
+                userType = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
+                userType.StaticInitializer = StaticInitializer_32_ProgressRingTemplateSettings;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 33:   //  Microsoft.UI.Xaml.Controls.RadioButtons
+                userType = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Control"));
+                userType.Activator = Activate_33_RadioButtons;
+                userType.StaticInitializer = StaticInitializer_33_RadioButtons;
                 userType.SetContentPropertyName("Microsoft.UI.Xaml.Controls.RadioButtons.Items");
                 userType.AddMemberName("Items");
                 userType.AddMemberName("Header");
@@ -611,26 +644,27 @@ namespace HEICConverter.HEICConverter_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 31:   //  System.Collections.Generic.IList`1<Object>
+            case 34:   //  System.Collections.Generic.IList`1<Object>
                 userType = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_31_IList;
-                userType.CollectionAdd = VectorAdd_31_IList;
+                userType.StaticInitializer = StaticInitializer_34_IList;
+                userType.CollectionAdd = VectorAdd_34_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 32:   //  HEICConverter.Views.ConverterWindow
+            case 35:   //  HEICConverter.Views.ConverterWindow
                 userType = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.Activator = Activate_32_ConverterWindow;
-                userType.StaticInitializer = StaticInitializer_32_ConverterWindow;
+                userType.Activator = Activate_35_ConverterWindow;
+                userType.StaticInitializer = StaticInitializer_35_ConverterWindow;
+                userType.AddMemberName("isActivated");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 33:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 36:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_33_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_33_TreeViewNode;
+                userType.Activator = Activate_36_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_36_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -642,10 +676,10 @@ namespace HEICConverter.HEICConverter_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 34:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 37:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_34_IList;
-                userType.CollectionAdd = VectorAdd_34_IList;
+                userType.StaticInitializer = StaticInitializer_37_IList;
+                userType.CollectionAdd = VectorAdd_37_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
@@ -1005,127 +1039,192 @@ namespace HEICConverter.HEICConverter_XamlTypeInfo
             var that = (global::Microsoft.UI.Xaml.Controls.ProgressBar)instance;
             return that.TemplateSettings;
         }
-        private object get_31_RadioButtons_Items(object instance)
+        private object get_31_ProgressRing_IsActive(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            return that.IsActive;
+        }
+        private void set_31_ProgressRing_IsActive(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            that.IsActive = (global::System.Boolean)Value;
+        }
+        private object get_32_ProgressRing_IsIndeterminate(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            return that.IsIndeterminate;
+        }
+        private void set_32_ProgressRing_IsIndeterminate(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            that.IsIndeterminate = (global::System.Boolean)Value;
+        }
+        private object get_33_ProgressRing_Maximum(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            return that.Maximum;
+        }
+        private void set_33_ProgressRing_Maximum(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            that.Maximum = (global::System.Double)Value;
+        }
+        private object get_34_ProgressRing_Minimum(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            return that.Minimum;
+        }
+        private void set_34_ProgressRing_Minimum(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            that.Minimum = (global::System.Double)Value;
+        }
+        private object get_35_ProgressRing_TemplateSettings(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            return that.TemplateSettings;
+        }
+        private object get_36_ProgressRing_Value(object instance)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            return that.Value;
+        }
+        private void set_36_ProgressRing_Value(object instance, object Value)
+        {
+            var that = (global::Microsoft.UI.Xaml.Controls.ProgressRing)instance;
+            that.Value = (global::System.Double)Value;
+        }
+        private object get_37_RadioButtons_Items(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.Items;
         }
-        private object get_32_RadioButtons_Header(object instance)
+        private object get_38_RadioButtons_Header(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.Header;
         }
-        private void set_32_RadioButtons_Header(object instance, object Value)
+        private void set_38_RadioButtons_Header(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.Header = (global::System.Object)Value;
         }
-        private object get_33_RadioButtons_HeaderTemplate(object instance)
+        private object get_39_RadioButtons_HeaderTemplate(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.HeaderTemplate;
         }
-        private void set_33_RadioButtons_HeaderTemplate(object instance, object Value)
+        private void set_39_RadioButtons_HeaderTemplate(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.HeaderTemplate = (global::Microsoft.UI.Xaml.DataTemplate)Value;
         }
-        private object get_34_RadioButtons_ItemTemplate(object instance)
+        private object get_40_RadioButtons_ItemTemplate(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.ItemTemplate;
         }
-        private void set_34_RadioButtons_ItemTemplate(object instance, object Value)
+        private void set_40_RadioButtons_ItemTemplate(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.ItemTemplate = (global::System.Object)Value;
         }
-        private object get_35_RadioButtons_ItemsSource(object instance)
+        private object get_41_RadioButtons_ItemsSource(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.ItemsSource;
         }
-        private void set_35_RadioButtons_ItemsSource(object instance, object Value)
+        private void set_41_RadioButtons_ItemsSource(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.ItemsSource = (global::System.Object)Value;
         }
-        private object get_36_RadioButtons_MaxColumns(object instance)
+        private object get_42_RadioButtons_MaxColumns(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.MaxColumns;
         }
-        private void set_36_RadioButtons_MaxColumns(object instance, object Value)
+        private void set_42_RadioButtons_MaxColumns(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.MaxColumns = (global::System.Int32)Value;
         }
-        private object get_37_RadioButtons_SelectedIndex(object instance)
+        private object get_43_RadioButtons_SelectedIndex(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.SelectedIndex;
         }
-        private void set_37_RadioButtons_SelectedIndex(object instance, object Value)
+        private void set_43_RadioButtons_SelectedIndex(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.SelectedIndex = (global::System.Int32)Value;
         }
-        private object get_38_RadioButtons_SelectedItem(object instance)
+        private object get_44_RadioButtons_SelectedItem(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             return that.SelectedItem;
         }
-        private void set_38_RadioButtons_SelectedItem(object instance, object Value)
+        private void set_44_RadioButtons_SelectedItem(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.RadioButtons)instance;
             that.SelectedItem = (global::System.Object)Value;
         }
-        private object get_39_TreeViewNode_Children(object instance)
+        private object get_45_ConverterWindow_isActivated(object instance)
+        {
+            var that = (global::HEICConverter.Views.ConverterWindow)instance;
+            return that.isActivated;
+        }
+        private void set_45_ConverterWindow_isActivated(object instance, object Value)
+        {
+            var that = (global::HEICConverter.Views.ConverterWindow)instance;
+            that.isActivated = (global::System.Boolean)Value;
+        }
+        private object get_46_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_40_TreeViewNode_Content(object instance)
+        private object get_47_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_40_TreeViewNode_Content(object instance, object Value)
+        private void set_47_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_41_TreeViewNode_Depth(object instance)
+        private object get_48_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_42_TreeViewNode_HasChildren(object instance)
+        private object get_49_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_43_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_50_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_43_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_50_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_44_TreeViewNode_IsExpanded(object instance)
+        private object get_51_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_44_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_51_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_45_TreeViewNode_Parent(object instance)
+        private object get_52_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -1353,106 +1452,153 @@ namespace HEICConverter.HEICConverter_XamlTypeInfo
                 xamlMember.Getter = get_30_ProgressBar_TemplateSettings;
                 xamlMember.SetIsReadOnly();
                 break;
+            case "Microsoft.UI.Xaml.Controls.ProgressRing.IsActive":
+                userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
+                xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "IsActive", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_31_ProgressRing_IsActive;
+                xamlMember.Setter = set_31_ProgressRing_IsActive;
+                break;
+            case "Microsoft.UI.Xaml.Controls.ProgressRing.IsIndeterminate":
+                userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
+                xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "IsIndeterminate", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_32_ProgressRing_IsIndeterminate;
+                xamlMember.Setter = set_32_ProgressRing_IsIndeterminate;
+                break;
+            case "Microsoft.UI.Xaml.Controls.ProgressRing.Maximum":
+                userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
+                xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "Maximum", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_33_ProgressRing_Maximum;
+                xamlMember.Setter = set_33_ProgressRing_Maximum;
+                break;
+            case "Microsoft.UI.Xaml.Controls.ProgressRing.Minimum":
+                userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
+                xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "Minimum", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_34_ProgressRing_Minimum;
+                xamlMember.Setter = set_34_ProgressRing_Minimum;
+                break;
+            case "Microsoft.UI.Xaml.Controls.ProgressRing.TemplateSettings":
+                userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
+                xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "TemplateSettings", "Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings");
+                xamlMember.Getter = get_35_ProgressRing_TemplateSettings;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.UI.Xaml.Controls.ProgressRing.Value":
+                userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.ProgressRing");
+                xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "Value", "Double");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_36_ProgressRing_Value;
+                xamlMember.Setter = set_36_ProgressRing_Value;
+                break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.Items":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "Items", "System.Collections.Generic.IList`1<Object>");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_31_RadioButtons_Items;
+                xamlMember.Getter = get_37_RadioButtons_Items;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.Header":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "Header", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_32_RadioButtons_Header;
-                xamlMember.Setter = set_32_RadioButtons_Header;
+                xamlMember.Getter = get_38_RadioButtons_Header;
+                xamlMember.Setter = set_38_RadioButtons_Header;
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.HeaderTemplate":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "HeaderTemplate", "Microsoft.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_33_RadioButtons_HeaderTemplate;
-                xamlMember.Setter = set_33_RadioButtons_HeaderTemplate;
+                xamlMember.Getter = get_39_RadioButtons_HeaderTemplate;
+                xamlMember.Setter = set_39_RadioButtons_HeaderTemplate;
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.ItemTemplate":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "ItemTemplate", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_34_RadioButtons_ItemTemplate;
-                xamlMember.Setter = set_34_RadioButtons_ItemTemplate;
+                xamlMember.Getter = get_40_RadioButtons_ItemTemplate;
+                xamlMember.Setter = set_40_RadioButtons_ItemTemplate;
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.ItemsSource":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "ItemsSource", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_35_RadioButtons_ItemsSource;
-                xamlMember.Setter = set_35_RadioButtons_ItemsSource;
+                xamlMember.Getter = get_41_RadioButtons_ItemsSource;
+                xamlMember.Setter = set_41_RadioButtons_ItemsSource;
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.MaxColumns":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "MaxColumns", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_36_RadioButtons_MaxColumns;
-                xamlMember.Setter = set_36_RadioButtons_MaxColumns;
+                xamlMember.Getter = get_42_RadioButtons_MaxColumns;
+                xamlMember.Setter = set_42_RadioButtons_MaxColumns;
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.SelectedIndex":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "SelectedIndex", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_37_RadioButtons_SelectedIndex;
-                xamlMember.Setter = set_37_RadioButtons_SelectedIndex;
+                xamlMember.Getter = get_43_RadioButtons_SelectedIndex;
+                xamlMember.Setter = set_43_RadioButtons_SelectedIndex;
                 break;
             case "Microsoft.UI.Xaml.Controls.RadioButtons.SelectedItem":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.RadioButtons");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "SelectedItem", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_38_RadioButtons_SelectedItem;
-                xamlMember.Setter = set_38_RadioButtons_SelectedItem;
+                xamlMember.Getter = get_44_RadioButtons_SelectedItem;
+                xamlMember.Setter = set_44_RadioButtons_SelectedItem;
+                break;
+            case "HEICConverter.Views.ConverterWindow.isActivated":
+                userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("HEICConverter.Views.ConverterWindow");
+                xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "isActivated", "Boolean");
+                xamlMember.Getter = get_45_ConverterWindow_isActivated;
+                xamlMember.Setter = set_45_ConverterWindow_isActivated;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_39_TreeViewNode_Children;
+                xamlMember.Getter = get_46_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_40_TreeViewNode_Content;
-                xamlMember.Setter = set_40_TreeViewNode_Content;
+                xamlMember.Getter = get_47_TreeViewNode_Content;
+                xamlMember.Setter = set_47_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_41_TreeViewNode_Depth;
+                xamlMember.Getter = get_48_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_42_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_49_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_43_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_43_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_50_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_50_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_44_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_44_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_51_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_51_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::HEICConverter.HEICConverter_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::HEICConverter.HEICConverter_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_45_TreeViewNode_Parent;
+                xamlMember.Getter = get_52_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }
